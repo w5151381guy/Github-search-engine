@@ -43,6 +43,4 @@ curl -X POST 'localhost:9200/recommend/user/IDIDIDID/_update?pretty' -H 'Content
 curl -X DELETE 'localhost:9200/recommend/user/IDIDIDID?pretty'
 ```
 
----
-
 ## Deployment
