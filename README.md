@@ -17,9 +17,7 @@
 docker-compose -f docker-compose-dev.yml up -d
 ```
 
----
-
-## CRUD using curl
+### CRUD using curl
 
 1.  create a user Larry, id = `IDIDID`
 
