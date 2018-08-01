@@ -17,7 +17,9 @@
 docker-compose -f docker-compose-dev.yml up -d
 ```
 
-### Test CRUD using curl
+---
+
+## CRUD using curl
 
 1.  create a user Larry, id = `IDIDID`
 
@@ -45,4 +47,4 @@ curl -X DELETE 'localhost:9200/recommend/user/IDIDIDID?pretty'
 
 ---
 
-## Production
+## Deployment
