@@ -2,7 +2,7 @@ const webpack = require('webpack')
 const path = require('path')
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './public/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -17,11 +17,7 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['react'],
-            plugins: [
-              'styled-jsx/babel',
-              'syntax-dynamic-import',
-              'transform-class-properties',
-            ],
+            plugins: ['syntax-dynamic-import', 'transform-class-properties'],
           },
         },
       },
@@ -53,5 +49,5 @@ module.exports = {
         loader: 'url-loader?limit=100000',
       },
     ],
-  }
+  },
 }

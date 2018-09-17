@@ -14,7 +14,7 @@ module.exports = merge(common, {
   devtool: 'inline-source-map',
   devServer: {
     port: 8080,
-    contentBase: path.join(__dirname, 'src'),
+    contentBase: path.join(__dirname, 'public'),
     // inline: true,
     publicPath: '/dist/',
     historyApiFallback: true,
