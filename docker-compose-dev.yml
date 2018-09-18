@@ -4,7 +4,7 @@ services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.3.2
     container_name: elastic
-    environment: 
+    environment:
       discovery.type: single-node
     ports:
       - 9200:9200 # for http
@@ -12,5 +12,15 @@ services:
     volumes:
       - esdata:/usr/share/elasticsearch/data
 
-volumes:
+  web:
+    build:
+      context: ./front-end
+      dockerfile: Dockerfile-Dev
+    container_name: web
+    ports: 
+      - 8080:8080
+    volumes: 
+      - ${PWD}/front-end/src:/app/src
+
+volumes: 
   esdata:

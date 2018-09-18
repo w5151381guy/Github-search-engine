@@ -1,0 +1,11 @@
+FROM node:10-alpine AS build
+
+WORKDIR /app
+
+ADD package.json /app/
+RUN npm install yarn -g
+RUN yarn 
+
+ADD webpack.dev.js webpack.config.js webpack.prod.js /app/
+ADD ./public /app/public
+CMD yarn run dev

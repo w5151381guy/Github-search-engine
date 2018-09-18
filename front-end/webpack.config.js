@@ -2,7 +2,10 @@ const webpack = require('webpack')
 const path = require('path')
 
 module.exports = {
-  entry: './public/index.js',
+  entry: {
+    vendor: ['react', 'react-dom'],
+    app: './public/index.js',
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -50,4 +53,10 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: 'vendor.js',
+    }),
+  ],
 }
