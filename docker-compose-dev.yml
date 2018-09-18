@@ -22,5 +22,13 @@ services:
     volumes: 
       - ${PWD}/front-end/src:/app/src
 
+  server:
+    build: ./back-end
+    container_name: server
+    ports:
+     - 3000:3000
+    volumes:
+      - ${PWD}/back-end/server:/app/server
+
 volumes: 
   esdata:
